@@ -24,7 +24,7 @@ const onClick = (event) => {
   event.preventDefault();
 
   const { target } = event;
-  if (!target.dataset.source) return;
+  if (target.nodeName !== "IMG") return;
 
   const instance = basicLightbox.create(`
 <img src=${target.dataset.source}>`);
